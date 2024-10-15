@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.validation.NumberValidator?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="370.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.signinController">
+   <children>
+      <Text fill="#ff6600" layoutX="123.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget your password ?" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <NumberValidator layoutX="140.0" layoutY="119.0" />
+      <JFXButton fx:id="sign_in_button" layoutX="62.0" layoutY="331.0" onAction="#sign_in" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: #FF9900;" text="Sign In" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <Button fx:id="button_exit" layoutX="320.0" layoutY="7.0" mnemonicParsing="false" onAction="#quit" prefHeight="34.0" prefWidth="30.0" style="-fx-background-color: #333333;">
+         <graphic>
+            <OctIconView fill="#c6c6c6" glyphName="X" size="35" text="">
+               <effect>
+                  <DropShadow color="#b5b5b5" spread="0.08" />
+               </effect>
+            </OctIconView>
+         </graphic>
+      </Button>
+      <MaterialDesignIconView fill="#ff9900" glyphName="ACCOUNT" layoutX="110.0" layoutY="181.0" size="150">
+         <effect>
+            <DropShadow />
+         </effect>
+      </MaterialDesignIconView>
+      <TextField fx:id="userfield" layoutX="61.0" layoutY="235.0" prefHeight="34.0" prefWidth="246.0" promptText="User" /> 
+      <PasswordField fx:id="passwordfield" layoutX="62.0" layoutY="279.0" prefHeight="34.0" prefWidth="246.0" promptText="Password">
+         <effect>
+            <DropShadow />
+         </effect>
+      </PasswordField>
+      <Text fx:id="error_message" fill="RED" layoutX="130.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+   </children>
+   <effect>
+      <DropShadow color="#170a00" height="80.06" radius="38.7875" spread="0.18" width="77.09" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="siginup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="370.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.signupController">
+   <children>
+      <TextField fx:id="firstname_signuppanel" layoutX="62.0" layoutY="155.0" prefHeight="34.0" prefWidth="246.0" promptText="First name" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="155.0">
+         <effect>
+            <DropShadow height="68.44" radius="28.5325" width="47.69" />
+         </effect>
+      </TextField>
+      <TextField fx:id="secondname_signuppanel" layoutX="62.0" layoutY="204.0" prefHeight="34.0" prefWidth="246.0" promptText="Second name">
+         <effect>
+            <DropShadow height="68.44" radius="28.5325" width="47.69" />
+         </effect>
+      </TextField>
+      <TextField fx:id="mail_signuppanel" layoutX="62.0" layoutY="250.0" prefHeight="34.0" prefWidth="246.0" promptText="Mail">
+         <effect>
+            <DropShadow height="68.44" radius="28.5325" width="47.69" />
+         </effect>
+      </TextField>
+      <PasswordField fx:id="password_signuppanel" layoutX="62.0" layoutY="296.0" prefHeight="34.0" prefWidth="246.0" promptText="Password" AnchorPane.bottomAnchor="156.0" AnchorPane.topAnchor="296.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </PasswordField>
+      <PasswordField fx:id="verification_password_signuppanel" layoutX="62.0" layoutY="347.0" prefHeight="34.0" prefWidth="246.0" promptText="Password">
+         <effect>
+            <DropShadow />
+         </effect>
+      </PasswordField>
+      <Button layoutX="312.0" layoutY="14.0" mnemonicParsing="false" onAction="#quit" prefHeight="34.0" prefWidth="30.0" style="-fx-background-color: #333333;">
+         <graphic>
+           <OctIconView fx:id="button_exit" fill="#c6c6c6" glyphName="X" size="35" text="">
+               <effect>
+                  <DropShadow color="#b5b5b5" spread="0.08" />
+               </effect>
+            </OctIconView>
+         </graphic>
+      </Button>
+      <JFXButton fx:id="signup_button_signuppanel" layoutX="62.0" layoutY="402.0" onAction="#signin" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: #FF9900;" text="Next" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <MaterialDesignIconView fx:id="icons" fill="#ff9900" glyphName="ACCOUNT_PLUS" layoutX="98.0" layoutY="131.0" size="150" text="">
+         <effect>
+            <DropShadow />
+         </effect>
+      </MaterialDesignIconView>
+      <Label fx:id="err_message" layoutX="63.0" layoutY="447.0" prefHeight="17.0" prefWidth="246.0" text="." textFill="RED" />
+      <FontAwesomeIconView fx:id="first_name_err" fill="RED" glyphName="TIMES_CIRCLE" layoutX="322.0" layoutY="177.0" size="20" visible="false" />
+      <FontAwesomeIconView fx:id="seconde_name_err" fill="RED" glyphName="TIMES_CIRCLE" layoutX="322.0" layoutY="227.0" size="20" visible="false" />
+      <FontAwesomeIconView fx:id="mail_err" fill="RED" glyphName="TIMES_CIRCLE" layoutX="322.0" layoutY="273.0" size="20" visible="false" />
+      <FontAwesomeIconView fx:id="password_err" fill="RED" glyphName="TIMES_CIRCLE" layoutX="322.0" layoutY="320.0" size="20" visible="false" />
+      <FontAwesomeIconView fx:id="password1_err" fill="RED" glyphName="TIMES_CIRCLE" layoutX="322.0" layoutY="370.0" size="20" visible="false" />
+      <JFXButton fx:id="signup_button_signuppanel2" layoutX="62.0" layoutY="402.0" onAction="#signin2" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: #FF9900;" text="Sign In" textFill="WHITE" visible="false">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <Label fx:id="action_label" layoutX="37.0" layoutY="118.0" prefHeight="17.0" prefWidth="43.0" text="Action" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="horror_label" layoutX="37.0" layoutY="349.0" prefHeight="21.0" prefWidth="63.0" text="Horror" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="chaildre_label" layoutX="37.0" layoutY="316.0" prefHeight="21.0" prefWidth="63.0" text="Children" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="crime_label" layoutX="37.0" layoutY="283.0" prefHeight="17.0" prefWidth="43.0" text="Crime" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="romance_label" layoutX="37.0" layoutY="250.0" prefHeight="21.0" prefWidth="63.0" text="Romance" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="adventure_label" layoutX="37.0" layoutY="151.0" prefHeight="21.0" prefWidth="79.0" text="Adventure" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="animation_label" layoutX="37.0" layoutY="184.0" prefHeight="17.0" prefWidth="79.0" text="Animation" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="comedy_label" layoutX="37.0" layoutY="217.0" prefHeight="21.0" prefWidth="63.0" text="Comedy" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXSlider fx:id="action_slider" layoutX="157.0" layoutY="122.0" visible="false" />
+      <JFXSlider fx:id="adventure_slider" layoutX="157.0" layoutY="154.0" visible="false" />
+      <JFXSlider fx:id="animation_slider" layoutX="157.0" layoutY="188.0" visible="false" />
+      <JFXSlider fx:id="comedy_slider" layoutX="157.0" layoutY="221.0" visible="false" />
+      <JFXSlider fx:id="romance_slider" layoutX="157.0" layoutY="254.0" visible="false" />
+      <JFXSlider fx:id="crime_slider" layoutX="157.0" layoutY="287.0" visible="false" />
+      <JFXSlider fx:id="childre_slider" layoutX="157.0" layoutY="320.0" visible="false" />
+      <JFXSlider fx:id="horror_slider" layoutX="157.0" layoutY="353.0" visible="false" />
+      <Label fx:id="min_label" layoutX="147.0" layoutY="71.0" text="Min" textFill="WHITE" visible="false" />
+      <Label fx:id="max_label" layoutX="286.0" layoutY="71.0" text="Max" textFill="WHITE" visible="false" />
+      <Label fx:id="median_label" layoutX="207.0" layoutY="71.0" text="Median" textFill="WHITE" visible="false" />
+   </children>
+   <effect>
+      <DropShadow color="#170a00" height="80.06" radius="38.7875" spread="0.18" width="77.09" />
+   </effect>
+</AnchorPane>

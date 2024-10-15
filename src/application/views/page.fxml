@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="703.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.pageController">
+   <children>
+      <AnchorPane fx:id="movie" layoutX="255.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#affich" prefHeight="200.0" prefWidth="151.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <JFXButton fx:id="bb" layoutX="41.0" layoutY="75.0" onAction="#clicked" style="-fx-background-color: #FF3300;" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

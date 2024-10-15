@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<StackPane prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <AnchorPane fx:id="mainpane" prefHeight="577.0" prefWidth="921.0" style="-fx-border-color: #666666;">
+         <children>
+            <AnchorPane fx:id="leftbanner" layoutX="-300.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #FF9900;">
+               <children>
+                  <MaterialDesignIconView fill="#666666" glyphName="ARROW_LEFT_BOLD" layoutX="236.0" layoutY="61.0" size="50" text="" />
+                  <Label layoutX="42.0" layoutY="163.0" prefHeight="17.0" prefWidth="131.0" text="History" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#333333cc" glyphName="HISTORY" layoutX="15.0" layoutY="188.0" size="30" />
+                  <JFXListView fx:id="History_LV" layoutX="8.0" layoutY="201.0" onMouseClicked="#Items_clicked" prefHeight="137.0" prefWidth="284.0" style="-fx-background-color: #FF9900;" />
+                  <Separator layoutX="40.0" layoutY="350.0" prefWidth="200.0" />
+                  <Label layoutX="47.0" layoutY="362.0" text="Wish List" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#333333cc" glyphName="STAR_ALT" layoutX="14.0" layoutY="387.0" size="30" />
+                  <JFXListView fx:id="WishList" layoutX="8.0" layoutY="394.0" onMouseClicked="#Items_clickedWL" prefHeight="137.0" prefWidth="284.0" style="-fx-background-color: #FF9900;" />
+                  <Separator layoutX="40.0" layoutY="544.0" prefWidth="200.0" />
+                  <JFXButton fx:id="HHM" ellipsisString="." layoutX="242.0" layoutY="25.0" onAction="#hide_hidden_menu" prefHeight="36.0" prefWidth="36.0" text="." />
+                  <FontAwesomeIconView fill="#333333cc" glyphName="HOME" layoutX="14.0" layoutY="110.0" size="30" />
+                  <Label layoutX="47.0" layoutY="85.0" text="Home" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="HomeButton" layoutX="42.0" layoutY="88.0" onAction="#GoHome" prefHeight="25.0" prefWidth="60.0" text="." />
+                  <Separator layoutX="40.0" layoutY="137.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="FilterPane" layoutX="353.0" layoutY="140.0" prefHeight="321.0" prefWidth="222.0" style="-fx-background-color: #FFFFFF;" visible="false">
+               <children>
+                  <JFXCheckBox fx:id="Action_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="54.0" text="Action" />
+                  <JFXCheckBox fx:id="Comedy_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="87.0" text="Comedy" />
+                  <JFXCheckBox fx:id="Drama_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="119.0" text="Drama" />
+                  <JFXCheckBox fx:id="Animation_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="151.0" text="Animation" />
+                  <JFXCheckBox fx:id="Horror_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="182.0" text="Horror" />
+                  <JFXCheckBox fx:id="Fantasy_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="215.0" text="Fantasy" />
+                  <JFXCheckBox fx:id="Children_Combox" checkedColor="#ff9900" layoutX="14.0" layoutY="249.0" text="Children" />
+                  <Label layoutX="22.0" layoutY="14.0" text="Type:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXCheckBox fx:id="Mystery_Combox" checkedColor="#ff9900" layoutX="13.0" layoutY="282.0" text="Mystery" />
+                  <Label layoutX="144.0" layoutY="16.0" text="Order By:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="108.0" layoutY="68.0" prefHeight="200.0" prefWidth="6.0" style="-fx-background-color: #666666;" />
+                  <JFXCheckBox fx:id="Ratings_Combox" checkedColor="#ff9900" layoutX="121.0" layoutY="87.0" text="Ratings" />
+                  <JFXCheckBox fx:id="Views_Combox" checkedColor="#ff9900" layoutX="121.0" layoutY="207.0" text="Views" />
+                  <JFXButton fx:id="Filter" layoutX="118.0" layoutY="278.0" onAction="#Filter_movie" prefHeight="35.0" prefWidth="90.0" style="-fx-border-color: #666666; -fx-background-color: #ff9900; -fx-border-radius: 3px;" text="Filter" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="search_banner" layoutX="101.0" layoutY="85.0" prefHeight="60.0" prefWidth="702.0" style="-fx-background-color: #FF9900;" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="100.0">
+               <children>
+                  <TextField fx:id="search" layoutX="14.0" layoutY="12.0" prefHeight="36.0" prefWidth="222.0" promptText="Search" AnchorPane.topAnchor="12.0" />
+                  <FontAwesomeIconView fill="#948989" glyphName="SEARCH" layoutX="212.0" layoutY="38.0" size="25" />
+                  <JFXButton fx:id="tendance" layoutX="527.0" layoutY="11.0" onAction="#tendance" prefHeight="36.0" prefWidth="113.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5px; -fx-border-color: #333333; -fx-border-radius: 5px;" text="Tendance">
+                     <effect>
+                        <DropShadow color="#0000007e" height="10.0" radius="4.5" width="10.0" />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="-15.0" />
+                     </padding>
+                  </JFXButton>
+                  <MaterialDesignIconView fill="#ff6600" glyphName="FIRE" layoutX="610.0" layoutY="38.0" size="25" text="" wrappingWidth="22.0" />
+                  <JFXButton fx:id="search_button" layoutX="207.0" layoutY="12.0" prefHeight="36.0" prefWidth="34.0" ripplerFill="BLACK" text=" " AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="468.0" AnchorPane.topAnchor="13.0" />
+                  <JFXButton fx:id="search_button" ellipsisString="" layoutX="210.0" layoutY="12.0" onAction="#go_search" prefHeight="35.0" prefWidth="27.0" text="." />
+                  <JFXButton fx:id="Filter_pane" layoutX="251.0" layoutY="13.0" onAction="#show_filter_pane" prefHeight="34.0" prefWidth="222.0" style="-fx-background-color: #FFFFFF;" text="Filter                                               " AnchorPane.leftAnchor="252.0" />
+                  <FontAwesomeIconView glyphName="SLIDERS" layoutX="445.0" layoutY="38.0" size="20" text="" />
+               </children>
+            </AnchorPane>
+            <MaterialDesignIconView fx:id="swip_left_image" fill="WHITE" glyphName="CHEVRON_RIGHT" layoutX="767.0" layoutY="340.0" size="100" text="" AnchorPane.bottomAnchor="229.5" AnchorPane.rightAnchor="0.0" />
+            <JFXButton fx:id="swip_left_button" layoutX="819.0" layoutY="340.0" onAction="#swip_left" prefHeight="68.0" prefWidth="52.0" text="." AnchorPane.rightAnchor="29.0" />
+            <MaterialDesignIconView fx:id="swipe_right_image" fill="WHITE" glyphName="CHEVRON_LEFT" layoutX="4.0" layoutY="411.0" size="100" AnchorPane.bottomAnchor="229.5" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="323.5" />
+            <JFXButton fx:id="swipe_right_button" layoutX="29.0" layoutY="338.0" onAction="#swipe_right" prefHeight="74.0" prefWidth="52.0" text="." AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="338.0" />
+            <JFXButton fx:id="logout" layoutX="778.0" layoutY="17.0" onAction="#logout" style="-fx-background-color: #FF9900;" text="Log Out" textFill="WHITE" visible="false" AnchorPane.rightAnchor="20.0" />
+            <Text fx:id="username_text" fill="WHITE" layoutX="631.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="." visible="false" />
+            <Label fx:id="user_label" layoutX="631.0" layoutY="21.0" prefHeight="17.0" prefWidth="55.0" textFill="WHITE" visible="false" />
+            <MaterialDesignIconView fx:id="accountlogo" fill="#ff9900" glyphName="ACCOUNT_CIRCLE" layoutX="608.0" layoutY="37.0" size="20" visible="false" />
+            <JFXButton fx:id="signin" layoutX="712.0" layoutY="16.0" onAction="#showsinginpane" style="-fx-border-color: #FF9900; -fx-border-radius: 2px;" text="Sign In" textFill="WHITE" AnchorPane.rightAnchor="90.0" />
+            <JFXButton fx:id="signupp" layoutX="774.0" layoutY="16.0" onAction="#showsinguppane" style="-fx-border-color: #FF9900; -fx-background-color: #FF9900; -fx-border-radius: 2px;" text="Sign Up" textFill="WHITE" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="watch_button" layoutX="737.0" layoutY="57.0" onAction="#watch" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #FF9900;" text="Watch" textFill="WHITE" visible="false" AnchorPane.topAnchor="57.0">
+               <effect>
+                  <DropShadow height="15.0" radius="7.0" width="15.0" />
+               </effect>
+            </JFXButton>
+            <MaterialDesignIconView fx:id="watch_button_icon" fill="WHITE" glyphName="PLAY" layoutX="808.0" layoutY="85.0" size="25" visible="false">
+               <effect>
+                  <DropShadow height="10.0" radius="4.5" width="10.0" />
+               </effect>
+            </MaterialDesignIconView>
+            <Label fx:id="title_label" layoutX="334.0" layoutY="58.0" lineSpacing="10.0" prefHeight="36.0" prefWidth="367.0" text="Title" textFill="WHITE" visible="false" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="58.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fx:id="return_icon" fill="WHITE" glyphName="KEYBOARD_RETURN" layoutX="30.0" layoutY="56.0" size="50" text="" visible="false" AnchorPane.leftAnchor="30.0" />
+            <JFXButton fx:id="return_button" layoutX="29.0" layoutY="12.0" onAction="#retun_to_mainpage" prefHeight="50.0" prefWidth="52.0" text="." visible="false" AnchorPane.leftAnchor="29.0" />
+            <Label fx:id="Rating_Label" layoutX="382.0" layoutY="120.0" text="Rating:" textFill="WHITE" visible="false" AnchorPane.leftAnchor="382.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="rating_values" layoutX="435.0" layoutY="120.0" prefHeight="21.0" prefWidth="31.0" textFill="WHITE" visible="false" AnchorPane.leftAnchor="435.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Views_label" layoutX="380.0" layoutY="90.0" prefHeight="21.0" prefWidth="52.0" text="Views:" textFill="WHITE" visible="false" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="470.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="views_values" layoutX="428.0" layoutY="90.0" prefHeight="21.0" prefWidth="72.0" textFill="WHITE" visible="false" AnchorPane.leftAnchor="428.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fx:id="rating_star_icon" fill="GOLD" glyphName="STAR" layoutX="467.0" layoutY="136.0" size="17" visible="false" AnchorPane.leftAnchor="467.0">
+               <effect>
+                  <DropShadow color="#000000d4" />
+               </effect>
+            </MaterialDesignIconView>
+            <JFXButton fx:id="movie_button_image" layoutX="105.0" layoutY="51.0" prefHeight="272.0" prefWidth="204.0" style="-fx-background-color: #FFFFFF;" text="." visible="false" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="51.0" />
+            <Label fx:id="categorie_label" layoutX="381.0" layoutY="150.0" text="Categorie:" textFill="WHITE" visible="false" AnchorPane.leftAnchor="381.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="categorie_values" layoutX="457.0" layoutY="150.0" prefHeight="17.0" prefWidth="158.0" textFill="#fffdfd" visible="false" AnchorPane.leftAnchor="457.0" />
+            <Label fx:id="desci_label" layoutX="383.0" layoutY="210.0" text="Description:" textFill="WHITE" visible="false" AnchorPane.leftAnchor="383.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Text fx:id="descrition_label_text" fill="WHITE" fontSmoothingType="LCD" layoutX="391.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ssss" visible="false" wrappingWidth="367.0000028461218">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Text>
+            <Label fx:id="RM_label" layoutX="82.0" layoutY="374.0" text="Similar Movie:" textFill="WHITE" visible="false" AnchorPane.leftAnchor="95.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fx:id="swipe_left_rmv_image" fill="WHITE" glyphName="CHEVRON_RIGHT" layoutX="804.0" layoutY="507.0" size="60" text="" visible="false" AnchorPane.rightAnchor="10.0" />
+            <JFXButton fx:id="swipe_left_rmv" layoutX="840.0" layoutY="466.0" onAction="#Fswipe_left_rmv" prefHeight="36.0" prefWidth="34.0" text="." visible="false" />
+            <MaterialDesignIconView fx:id="swipe_right_rmv_image" fill="WHITE" glyphName="CHEVRON_LEFT" layoutX="-6.0" layoutY="508.0" size="60" text="" visible="false" AnchorPane.leftAnchor="10.0" />
+            <JFXButton fx:id="swipe_right_rmv" layoutX="25.0" layoutY="467.0" onAction="#Fswipe_right_rmv" prefHeight="36.0" prefWidth="34.0" text="." visible="false" />
+            <Rating fx:id="RatingBar" layoutX="120.0" layoutY="332.0" prefHeight="17.0" prefWidth="68.0" rating="0.0" visible="false" />
+            <FontAwesomeIconView fx:id="SHMICON" fill="WHITE" glyphName="BARS" layoutX="44.0" layoutY="125.0" size="25" text="" />
+            <JFXButton fx:id="SHM" layoutX="42.0" layoutY="105.0" onAction="#show_hidden_menu" prefHeight="25.0" prefWidth="24.0" text="." />
+            <Label fx:id="AddtowishlistLabel" layoutX="381.0" layoutY="180.0" text="Add To WishList:" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXCheckBox fx:id="wishlistcheckbox" checkedColor="#ff9900" layoutX="498.0" layoutY="182.0" prefHeight="10.0" prefWidth="20.0" text="." unCheckedColor="WHITE" visible="false" />
+            <FontAwesomeIconView fill="WHITE" glyphName="YOUTUBE" layoutX="790.0" layoutY="626.0" size="20" text="" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="70.0" />
+            <FontAwesomeIconView fill="WHITE" glyphName="FACEBOOK_SQUARE" layoutX="820.0" layoutY="626.0" size="20" text="" wrappingWidth="17.14285659790039" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="40.0" />
+            <FontAwesomeIconView fill="WHITE" glyphName="TWITTER" layoutX="819.0" layoutY="621.0" size="20" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <AnchorPane fx:id="movie_anchor" layoutX="95.0" layoutY="37.0" prefHeight="328.0" prefWidth="687.0" style="-fx-background-color: #333333;" visible="false">
+               <children>
+                  <MediaView fx:id="media_view" fitHeight="300.0" fitWidth="600.0" layoutX="84.0" layoutY="14.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</StackPane>
